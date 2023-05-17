@@ -1,6 +1,8 @@
-from ninja import Schema
+from ninja import Schema, ModelSchema
 from typing import List, Dict
+from .models import Alimento as ModelAlimento
 
-class Alimento(Schema):
-    titulo: str
-    quantidade: int
+class Alimento(ModelSchema):
+    class Config:
+        model = ModelAlimento
+        model_fields = ['id', 'quantidade']
