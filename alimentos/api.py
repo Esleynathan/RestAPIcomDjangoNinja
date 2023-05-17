@@ -11,7 +11,6 @@ alimentos = [
     {'Nome': 'Maçã', 'Quantidade': 2, 'id': 3},
 ]
 
-@alimentos_router.get('/{int:alimento_id}/', response=List[Dict] )
-def get_alimento(request, alimento_id: int) -> List[Dict]:
-    alimento = list(filter(lambda x: x['id'] == alimento_id, alimentos))
-    return alimento
+@alimentos_router.get('/{int:alimento_id}/')
+def get_alimento(request, alimento_id: int, preco_min: int = 10):
+    return {'alimento.id': alimento_id, 'preco_min': preco_min}
