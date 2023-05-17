@@ -1,8 +1,8 @@
-from ninja import NinjaAPI
+from ninja import Router
 from django.http import JsonResponse
 
-api = NinjaAPI()
+alimentos_router = Router()
 
-@api.get('teste/')
+@alimentos_router.get('teste/')
 def teste(request):
     return JsonResponse({'teste': 1})
