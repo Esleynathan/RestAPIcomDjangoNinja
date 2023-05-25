@@ -5,7 +5,6 @@ from django.shortcuts import get_object_or_404
 
 alimentos_router = Router()
 
-
 # @alimentos_router.get('/{alimento_id}/', response = Alimento)
 # def get_alimento(request, alimento_id: int) -> Alimento:  
 #     alimento = ModelAlimento.objects.get( id = alimento_id)
@@ -13,4 +12,6 @@ alimentos_router = Router()
 
 @alimentos_router.post('/')
 def get_alimento(request, alimento: Alimento):
+    alimento.quantidade += 10
+
     return alimento
