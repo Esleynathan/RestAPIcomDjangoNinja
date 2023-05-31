@@ -3,7 +3,7 @@ from typing import List, Dict
 from .models import Alimento as ModelAlimento
 
 class Alimento(ModelSchema):
-    novo_campo: int[int] = []
+    novo_campo: List[int] = []
 
     class Config(Schema.Config):
         model = ModelAlimento

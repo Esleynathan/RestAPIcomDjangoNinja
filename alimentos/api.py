@@ -12,6 +12,5 @@ alimentos_router = Router()
 
 @alimentos_router.post('/')
 def get_alimento(request, alimento: Alimento):
-    alimento.quantidade += 10
-
-    return alimento
+    print(alimento.quantidade)
+    return {'quantidade': alimento.quantidade}
