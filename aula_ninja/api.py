@@ -15,7 +15,7 @@ from ninja.security import HttpBearer
 class MyAuth(HttpBearer):
     def authenticate(self, request: HttpRequest, token: str):
         if token == "1234abc":
-            return token
+            return True
 
 api = NinjaAPI(auth=MyAuth())
 
