@@ -3,6 +3,6 @@ from django.http import JsonResponse
 
 pacientes_router = Router()
 
-@pacientes_router.get('teste/')
+@pacientes_router.post('teste/')
 def teste(request):
     return JsonResponse({'teste': 2})
